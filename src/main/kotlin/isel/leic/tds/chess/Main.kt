@@ -1,15 +1,19 @@
-package isel.leic.tds.billboard
+package isel.leic.tds.chess
 
 import isel.leic.tds.mongoDb.MongoDriver
 
 fun main() {
+
+
     MongoDriver().use { mongoDriver ->
-        val author = readAuthorId()
         while (true) {
             val (cmd, parameter) = readCommand()
             when (cmd) {
-                "GET" -> getMessage(mongoDriver,parameter)
-                "POST" -> postMessage(mongoDriver,author, parameter)
+                "GET" -> TODO()
+                "POST" -> TODO()
+
+
+
                 "EXIT" -> break
                 else -> println("Invalid command")
             }
@@ -32,13 +36,6 @@ fun String.parseCommand(): LineCommand {
     return cmd to param
 }
 
-fun readAuthorId(): Author {
-    while (true) {
-        print("Please provide your user id:")
-        readln().toAuthorOrNull()?.apply { return this }
-        println("Invalid author.")
-    }
-}
 
 fun readln() = readLine()!!
 fun readlnOrNull() = readLine()

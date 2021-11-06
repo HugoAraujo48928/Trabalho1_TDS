@@ -1,4 +1,4 @@
-package isel.leic.tds.billboard
+package isel.leic.tds.chess
 
 import kotlin.test.*
 
