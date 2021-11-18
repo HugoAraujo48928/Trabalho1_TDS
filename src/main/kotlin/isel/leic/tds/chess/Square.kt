@@ -2,44 +2,89 @@ package isel.leic.tds.chess
 
 
 
+fun String.toSquareOrNull() : Square? {
+    if(this.length == 2)
+        if (this[0].toColumnOrNull() != null && this[1].toRowOrNull() != null)
+            return Square(this[0].toColumnOrNull()!! , this[1].toRowOrNull()!!)
+    return null
+}
 
 
-//data class Square(val col: Char, val row: Int, val piece: Char?){
+class Square(col: Column, ro: Row) {
 
+    val column = col
+    val row = ro
 
+    override fun toString() = "".plus(this.column.letter).plus(this.row.digit)
 
-    //val ColumnValues : List<Char> = listOf('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h')
-
-    //init{
-        //    CheckColumnValue(col)
-        //    CheckRowValue(row)
-        //    CheckPieceValue(piece)
-    //}
-
-    //private val PieceValues = listOf('r','b','n','k','q','p', ' ', null)
-    //private val RowValues = listOf(1, 2, 3, 4, 5, 6, 7, 8)
-    //private val ColumnValues = listOf('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h')
-
-    //fun CheckColumnValue(Column : Char) =
-    //   check(ColumnValues.contains(Column)) { "Column value is not valid" }
-
-    //fun CheckRowValue(Row : Int) =
-    //    check(RowValues.contains(Row)) { "Row value is not valid" }
-
-    //fun CheckPieceValue(Piece : Char?){
-    //    check(PieceValues.contains(Piece?.lowercaseChar())) { "Piece value is not valid" }
-
-    //}
-
-
-
-
-//}
-
-
-
-
-
+    companion object {
+        val values = listOf(
+            Square(0.toColumn(),0.toRow()),
+            Square(0.toColumn(),1.toRow()),
+            Square(0.toColumn(),2.toRow()),
+            Square(0.toColumn(),3.toRow()),
+            Square(0.toColumn(),4.toRow()),
+            Square(0.toColumn(),5.toRow()),
+            Square(0.toColumn(),6.toRow()),
+            Square(0.toColumn(),7.toRow()),
+            Square(1.toColumn(),0.toRow()),
+            Square(1.toColumn(),1.toRow()),
+            Square(1.toColumn(),2.toRow()),
+            Square(1.toColumn(),3.toRow()),
+            Square(1.toColumn(),4.toRow()),
+            Square(1.toColumn(),5.toRow()),
+            Square(1.toColumn(),6.toRow()),
+            Square(1.toColumn(),7.toRow()),
+            Square(2.toColumn(),0.toRow()),
+            Square(2.toColumn(),1.toRow()),
+            Square(2.toColumn(),2.toRow()),
+            Square(2.toColumn(),3.toRow()),
+            Square(2.toColumn(),4.toRow()),
+            Square(2.toColumn(),5.toRow()),
+            Square(2.toColumn(),6.toRow()),
+            Square(2.toColumn(),7.toRow()),
+            Square(3.toColumn(),0.toRow()),
+            Square(3.toColumn(),1.toRow()),
+            Square(3.toColumn(),2.toRow()),
+            Square(3.toColumn(),3.toRow()),
+            Square(3.toColumn(),4.toRow()),
+            Square(3.toColumn(),5.toRow()),
+            Square(3.toColumn(),6.toRow()),
+            Square(3.toColumn(),7.toRow()),
+            Square(4.toColumn(),0.toRow()),
+            Square(4.toColumn(),1.toRow()),
+            Square(4.toColumn(),2.toRow()),
+            Square(4.toColumn(),3.toRow()),
+            Square(4.toColumn(),4.toRow()),
+            Square(4.toColumn(),5.toRow()),
+            Square(4.toColumn(),6.toRow()),
+            Square(4.toColumn(),7.toRow()),
+            Square(5.toColumn(),0.toRow()),
+            Square(5.toColumn(),1.toRow()),
+            Square(5.toColumn(),2.toRow()),
+            Square(5.toColumn(),3.toRow()),
+            Square(5.toColumn(),4.toRow()),
+            Square(5.toColumn(),5.toRow()),
+            Square(5.toColumn(),6.toRow()),
+            Square(5.toColumn(),7.toRow()),
+            Square(6.toColumn(),0.toRow()),
+            Square(6.toColumn(),1.toRow()),
+            Square(6.toColumn(),2.toRow()),
+            Square(6.toColumn(),3.toRow()),
+            Square(6.toColumn(),4.toRow()),
+            Square(6.toColumn(),5.toRow()),
+            Square(6.toColumn(),6.toRow()),
+            Square(6.toColumn(),7.toRow()),
+            Square(7.toColumn(),0.toRow()),
+            Square(7.toColumn(),1.toRow()),
+            Square(7.toColumn(),2.toRow()),
+            Square(7.toColumn(),3.toRow()),
+            Square(7.toColumn(),4.toRow()),
+            Square(7.toColumn(),5.toRow()),
+            Square(7.toColumn(),6.toRow()),
+            Square(7.toColumn(),7.toRow()))
+    }
+}
 
 
 
